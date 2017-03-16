@@ -1,0 +1,224 @@
+/*CSS Reset i ogólne*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ralewayregular', Arial, sans-serif;
+}
+
+body {
+    background-color: grey;
+}
+    
+/*Ostylowanie głównych elementów*/
+nav, header, section, footer {
+    width: 100%;
+}
+
+.main_width {
+    width: 1000px;
+    border: 0 solid red;
+    margin: auto;
+    background-color: white;
+}
+
+.main_width:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/*Ostylowanie górnego menu*/
+
+nav div.main_width {
+    background-color: black;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+/*Ostylowanie "logo"*/
+.logo {
+    font-family: 'ralewayregular', Arial, sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+}
+
+.logo b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: greenyellow;
+}
+
+/*Ostylowanie menu*/
+
+ul {
+    display: inline-block;
+    float: right;
+    font-family: 'ralewayregular', Arial, sans-serif;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+/*Ostylowanie headera*/
+header {
+}
+
+header .main_width {
+    height: 400px;
+    background-color: lightgrey;
+}
+
+#big-image {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 490px;
+    background-image: url(/images/black_chair.png);
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 500px;
+}
+
+#big-description {
+    display: inline-block;
+    float: right;
+    height: 100%;
+    width: 490px;
+}
+
+#big-description > h1 {
+    padding: 5px;
+    margin: 5px;
+    text-transform: uppercase;
+    
+}
+
+#big-description b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: lightgreen;
+}
+
+/*Ostylowanie pierwszej sekcji*/
+#first-section div.main_width {
+    
+    position: relative;
+    height: 300px;
+    background-color: white;
+}
+
+
+#first-section article {
+    display: inline-block;
+    float: left;
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    border: 2px solid blue;
+}
+
+#first-section article:first-child {
+    margin-left: 20px;
+}
+
+#first-section article:last-child {
+    height: 230px;
+    margin-right: 20px;
+}
+
+/*Ostylowanie sekcji 2 i 3:*/
+.section-header {
+    position: relative;
+    margin-left: 20px;
+    vertical-align: top;
+    width: 300px;
+    height: 30px;
+    border-bottom: 5px solid green;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+}
+/*Ostylowanie drugiej sekcji*/
+
+#second-section div.main_width {
+    padding-top: 20px;
+    position: relative;
+    height: 600px;
+    background-color: lightgrey;
+}
+
+#second-section article {
+    display: inline-block;
+    float: left;
+    height: 460px;
+    width: 300px;
+    margin: 10px;
+/*    temporary:*/
+    border: 2px solid blue;
+}
+
+#second-section article:nth-child(2) {
+    margin-left: 20px;
+
+}
+
+#second-section article:last-child {
+    margin-right: 20px;
+
+}
+
+/*Ostylowanie trzeciej sekcji*/
+
+#third-section div.main_width {
+    padding-top: 20px;
+    position: relative;
+    height: 600px;
+    background-color: white;
+}
+
+#third-section article {
+    display: inline-block;
+    float: left;
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+/*    temporary:*/
+    border: 2px solid blue;
+}
+
+/*Ostylowanie stopki*/
+footer .main_width {
+    height: 100px;
+}
+
+.wide_container, .narrow_container {
+    background-color: pink;
+    margin: 10px;
+}
+
+.wide_container {
+    width: 580px;
+    margin-left: 20px;
+    float: left;
+}
+
+.narrow_container {
+    width: 350px;
+    margin-right: 20px;
+    float: right;
+}
+
+#third-section .wide_container, 
+#third-section .narrow_container {
+    height: 510px;
+}
+
+footer .wide_container,
+footer .narrow_container {
+    height: 80px;
+}
