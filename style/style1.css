@@ -1,0 +1,445 @@
+:root {
+    --back-grey: grey;
+    --sec-grey: lightgrey;
+    --logo-green: rgb(0, 194, 161);
+    --text-green: rgb(0, 194, 161);
+    --green-line-width: 10px;
+}
+
+
+/*CSS Reset i ogólne*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ralewayregular', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--back-grey);
+}
+
+
+/*Ostylowanie głównych elementów*/
+
+nav,
+header,
+section,
+footer {
+    width: 100%;
+}
+
+nav {
+    background-color: black;
+}
+
+header {
+    background: linear-gradient(rgb(249, 250, 251), rgb(208, 207, 217));
+}
+
+.main_width {
+    width: 1300px;
+    border: 0 solid red;
+    margin: auto;
+    background-color: white;
+}
+
+.main_width:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+button {
+    background-color: var(--text-green);
+    display: block;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/*Ostylowanie górnego menu*/
+
+nav div.main_width {
+    background-color: inherit;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+/*Ostylowanie "logo"*/
+
+.logo {
+    font-family: 'ralewayregular', Arial, sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    float: left;
+}
+
+.logo b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: var(--logo-green);
+}
+
+
+/*Ostylowanie menu*/
+
+ol {
+    float: right;
+    display: inline-block;
+}
+
+ol > li {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 40px;
+}
+
+ol > li > ul > li {
+    text-transform: none;
+}
+
+ol > li > ul {
+    display: none;
+}
+
+ol > li:hover > ul {
+    margin-left: -20px;
+    display: block;
+    position: absolute;
+    background: black;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 5px 20px;
+    z-index: 3;
+    line-height: 30px;
+    /*    wyłączam:*/
+    /*    display: none;*/
+}
+
+ol > li:hover > ul::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    top: -20px;
+    left: 50px;
+    border-bottom: 10px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+
+/*Ostylowanie headera*/
+
+header {}
+
+header .main_width {
+    background-color: inherit;
+    height: 600px;
+    position: relative;
+}
+
+#big-image {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 550px;
+    background-image: url(/images/black_chair.png);
+    background-repeat: no-repeat;
+    background-position: -30px 90px;
+    background-size: 700px;
+}
+
+#big-description {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 600px;
+    position: relative;
+}
+
+#big-description > h1 {
+    width: 450px;
+    padding: 5px;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+#big-description b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: var(--text-green);
+}
+
+header p {
+    text-align: center;
+    padding: 0 50px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+header button {
+    margin: 40px auto;
+    width: 320px;
+    height: 70px;
+    border-radius: 15px;
+    font-family: 'ralewayregular', Arial, sans-serif;
+    font-size: 30px;
+}
+
+#header-nav-container {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    top: calc(50% - 50px);
+    z-index: 3;
+    transform: scaleY(0.6);
+}
+
+.nav-arrow {
+    height: 100%;
+    width: 80px;
+    border: 6px solid var(--text-green)
+}
+
+.ar-left {
+    float: left;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transform: rotate(45deg);
+}
+
+.ar-right {
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    float: right;
+    transform: rotate(45deg);
+}
+
+
+/*Ostylowanie pierwszej sekcji*/
+
+#first-section {
+    background-color: white;
+}
+
+#first-section div.main_width {
+    background-color: inherit;
+    position: relative;
+    height: 450px;
+}
+
+#first-section article {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 280px;
+    width: 405px;
+    margin: 35px 20px;
+}
+
+#first-section article:first-child {
+    margin-left: 0px;
+    background-image: url(/images/box1_img.jpg);
+    background-size: cover;
+}
+
+#first-section article:nth-child(2) {
+    background-image: url(/images/box2_img.jpg);
+    background-size: cover;
+}
+
+#first-section article:last-child {
+    float: right;
+    height: 320px;
+    margin-right: 0px;
+    border: 2px solid grey;
+    position: relative;
+}
+
+
+/*Label na boksach*/
+
+.box-transp {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 20px;
+    background-color: #ffffff;
+    opacity: 0.35;
+}
+
+.box-label {
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    height: 35px;
+    bottom: 40px;
+    border-bottom: var(--green-line-width) solid var(--text-green);
+}
+
+.box-label h1 {
+    margin: 0;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+
+
+/*Ostatni box sekcji 1*/
+
+#first-section article:last-child .box-label {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    display: block;
+}
+
+.box-descr {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 10px;
+    padding: 30px;
+    line-height: 25px;
+    color: grey;
+}
+
+
+/*Ostylowanie sekcji 2 i 3:*/
+
+#second-section {
+    background-color: rgb(241, 241, 241);
+}
+
+.section-header {
+    position: absolute;
+    top: 40px;
+    width: 405px;
+    height: 60px;
+    border-bottom: var(--green-line-width) solid var(--text-green);
+    padding-bottom: 20px;
+}
+
+.section-header h1 {
+    text-transform: uppercase;
+    font-size: 35px;
+}
+
+
+/*Ostylowanie drugiej sekcji*/
+
+#second-section div.main_width {
+    padding-top: 120px;
+    position: relative;
+    height: 800px;
+    background-color: inherit;
+}
+
+#second-section article {
+    position: relative;
+    float: left;
+    height: 600px;
+    width: 405px;
+    margin: 35px 20px;
+    /*    temporary:*/
+    border: 2px solid blue;
+}
+
+#second-section article:nth-child(2) {
+    margin-left: 0px;
+}
+
+#second-section article:last-child {
+    float: right;
+    margin-right: 0;
+}
+
+
+/*Price plan*/
+
+.price-plan-frame {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 550px;
+    border: 2px solid rgb(213, 213, 213);
+    background-color: rgb(249, 249, 249);
+}
+
+.price-plan-circle {
+    position: absolute;
+    left: calc(50% - 50px);
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: inherit;
+    background-color: white;
+}
+
+
+/*Ostylowanie trzeciej sekcji*/
+
+#third-section div.main_width {
+    padding-top: 20px;
+    position: relative;
+    height: 600px;
+    background-color: white;
+}
+
+#third-section article {
+    display: inline-block;
+    float: left;
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+    /*    temporary:*/
+    border: 2px solid blue;
+}
+
+
+/*Ostylowanie stopki*/
+
+footer .main_width {
+    height: 100px;
+}
+
+.wide_container,
+.narrow_container {
+    background-color: pink;
+    margin: 10px;
+}
+
+.wide_container {
+    width: 580px;
+    margin-left: 20px;
+    float: left;
+}
+
+.narrow_container {
+    width: 350px;
+    margin-right: 20px;
+    float: right;
+}
+
+#third-section .wide_container,
+#third-section .narrow_container {
+    height: 510px;
+}
+
+footer .wide_container,
+footer .narrow_container {
+    height: 80px;
+}
