@@ -343,14 +343,14 @@ header button {
 #second-section div.main_width {
     padding-top: 120px;
     position: relative;
-    height: 800px;
+    height: 1050px;
     background-color: inherit;
 }
 
 #second-section article {
     position: relative;
     float: left;
-    height: 600px;
+    height: 800px;
     width: 405px;
     margin: 35px 20px;
     /*    temporary:*/
@@ -373,7 +373,7 @@ header button {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 550px;
+    height: 725px;
     border: 2px solid rgb(213, 213, 213);
     background-color: rgb(249, 249, 249);
 }
@@ -381,12 +381,104 @@ header button {
 .price-plan-circle {
     position: absolute;
     left: calc(50% - 50px);
-    top: -50px;
+    top: -75px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: inherit;
     background-color: white;
+}
+
+.price-circle-inner {
+    position: absolute;
+    left: 24px;
+    top: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(213, 213, 213);
+}
+
+.price-label {
+    position: relative;
+    top: 40px;
+    width: 208px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.price-plan-head {
+    text-transform: uppercase;
+    font-size: 35px;
+    color: var(--text-green);
+}
+
+.price-plan-price {
+    position: relative;
+    top: 80px;
+    margin: 0 auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid rgb(213, 213, 213);
+}
+
+.price-plan-price h1,
+.price-plan-price h2 {
+    position: relative;
+    margin: 0 auto;
+    color: rgb(213, 213, 213);
+    text-align: center;
+}
+
+.price-plan-price h1 {
+    margin-top: 40px;
+    font-family: 'ralewaybold';
+    font-size: 60px;
+}
+
+.price-plan-price sup {
+    font-size: 20px;
+}
+
+.price-plan-price h2 {
+    margin-top: 5px;
+    font-size: 22px;
+}
+
+table {
+    position: absolute;
+    top: 340px;
+    width: 100%;
+    font-size: 30px;
+    color: rgb(122, 123, 124);
+    border-collapse: collapse;
+}
+
+tr {
+    height: 55px;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(2n+1) {
+    background-color: rgb(227, 228, 229);
+}
+
+tr:nth-child(2n) {
+    background-color: rgb(240,241,242);
+}
+
+.price-plan-frame button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    font-size: 30px;
+    margin: auto;
+    
 }
 
 
