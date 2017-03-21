@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'ralewayregular', Arial, sans-serif;
+    /*    transition-duration: 500ms;*/
 }
 
 body {
@@ -43,6 +44,7 @@ header {
     border: 0 solid red;
     margin: auto;
     background-color: white;
+    /*    poszerzyć main_width !!!*/
 }
 
 .main_width:after {
@@ -353,8 +355,6 @@ header button {
     height: 800px;
     width: 405px;
     margin: 35px 20px;
-    /*    temporary:*/
-    border: 2px solid blue;
 }
 
 #second-section article:nth-child(2) {
@@ -402,9 +402,10 @@ header button {
 .price-label {
     position: relative;
     top: 40px;
-    width: 208px;
+    width: 300px;
     height: 40px;
     margin: 0 auto;
+    text-align: center;
 }
 
 .price-plan-head {
@@ -469,69 +470,163 @@ tr:nth-child(2n+1) {
 }
 
 tr:nth-child(2n) {
-    background-color: rgb(240,241,242);
+    background-color: rgb(240, 241, 242);
 }
 
 .price-plan-frame button {
-    position: relative;
-    width: 150px;
-    height: 40px;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    border-radius: 15px;
     font-size: 30px;
     margin: auto;
-    
+    bottom: 40px;
+    left: 100px;
+}
+
+
+/*Ostylowanie hovera nad price-planami*/
+
+.price-plan-frame:hover {
+    background-color: rgb(0, 194, 161);
+    border: 2px solid rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover > div.price-plan-circle {
+    background-color: rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover div.price-circle-inner {
+    background-color: rgb(248, 249, 250);
+}
+
+.price-plan-frame:hover p.price-plan-head {
+    color: white;
+}
+
+.price-plan-frame:hover div.price-plan-price * {
+    color: rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover button {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(0, 194, 161);
 }
 
 
 /*Ostylowanie trzeciej sekcji*/
 
-#third-section div.main_width {
-    padding-top: 20px;
-    position: relative;
-    height: 600px;
+#third-section {
     background-color: white;
 }
 
-#third-section article {
-    display: inline-block;
+#third-section div.main_width {
+    padding-top: 20px;
+    position: relative;
+    height: 800px;
+}
+
+.small-img {
+    margin: 110px 100px 0 0;
+    width: 320px;
+    height: 300px;
+    float: right;
+    background-image: url(/images/red_chair.png);
+    background-size: cover;
+    background-position: center;
+}
+
+form {
+    position: absolute;
+    top: 140px;
+}
+
+input {
+    margin: 20px 0;
+    height: 100px;
+    width: 800px;
+    padding: 20px;
+    font-size: 50px;
+}
+
+textarea {
+    margin: 20px 0;
+    height: 300px;
+    width: 800px;
+    padding: 20px;
+    font-size: 50px;
     float: left;
-    height: 200px;
+}
+
+input[type="checkbox"] {
+    float: right;
+    vertical-align: top;
+    height: 100px;
+    width: 80px;
+    margin: 40px 10px;
+    /*Ostylować checkbox do końca*/
+}
+
+.checkbox-label {
+    margin: 40px 10px;
+    font-size: 30px;
+    float: right;
     width: 300px;
-    margin: 10px;
-    /*    temporary:*/
-    border: 2px solid blue;
+    height: 100px;
+    font-size: 25px;
+}
+
+#third-section button {
+    float: right;
+    margin: 40px 40px;
+    width: 400px;
+    height: 100px;
+    border-radius: 15px;
+    font-size: 50px;
 }
 
 
 /*Ostylowanie stopki*/
 
+footer {
+    background-color: white;
+}
+
 footer .main_width {
     height: 100px;
 }
 
-.wide_container,
-.narrow_container {
-    background-color: pink;
-    margin: 10px;
-}
-
-.wide_container {
-    width: 580px;
-    margin-left: 20px;
+.copyright {
     float: left;
 }
 
-.narrow_container {
-    width: 350px;
-    margin-right: 20px;
+footer .logo {
     float: right;
+    margin: 0 0 0 200px;
 }
 
-#third-section .wide_container,
-#third-section .narrow_container {
-    height: 510px;
+/*Ikony portali społecznościowych*/
+
+.social-icons {
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-size: cover;
 }
 
-footer .wide_container,
-footer .narrow_container {
-    height: 80px;
+#flickr {
+    background-image: url(/images/flickr.png);
+}
+
+#pinterest {
+    background-image: url(/images/pinterest.png);
+}
+
+#twitter {
+    background-image: url(/images/twitter.png);
+}
+
+#vimeo {
+    background-image: url(/images/vimeo.png);
 }
