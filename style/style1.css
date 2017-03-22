@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'ralewayregular', Arial, sans-serif;
+    /*    transition-duration: 500ms;*/
 }
 
 body {
@@ -61,6 +62,7 @@ button {
     text-transform: uppercase;
     cursor: pointer;
 }
+
 
 /*Ostylowanie górnego menu*/
 
@@ -285,8 +287,8 @@ header button {
 .box-label {
     position: absolute;
     left: 20px;
-    width: 220px;
-    height: 40px;
+    width: 160px;
+    height: 35px;
     bottom: 40px;
     border-bottom: var(--green-line-width) solid var(--text-green);
 }
@@ -506,11 +508,6 @@ tr:nth-child(2n) {
     color: rgb(0, 194, 161);
 }
 
-.price-plan-frame:hover tr:nth-child(2n+1) {
-    background-color: rgb(255, 255, 255);
-
-}
-
 .price-plan-frame:hover button {
     cursor: pointer;
     background-color: white;
@@ -545,13 +542,7 @@ form {
     top: 140px;
 }
 
-::-webkit-input-placeholder {
-    font-family: 'ralewaythin', 'Arial', sans-serif;
-    color: rgb(185, 186, 187);
-}
-
 input {
-    border: 2px solid rgb(0, 194, 161);
     margin: 20px 0;
     height: 100px;
     width: 800px;
@@ -560,67 +551,31 @@ input {
 }
 
 textarea {
-    border: 2px solid rgb(0, 194, 161);
     margin: 20px 0;
     height: 300px;
     width: 800px;
     padding: 20px;
     font-size: 50px;
     float: left;
-    resize: none;
+}
+
+input[type="checkbox"] {
+    float: right;
+    vertical-align: top;
+    height: 100px;
+    width: 80px;
+    margin: 40px 10px;
+    /*Ostylować checkbox do końca*/
 }
 
 .checkbox-label {
-    color: rgb(185, 186, 187);
-    width: 280px;
-    height: 100px;
+    margin: 40px 10px;
+    font-size: 30px;
     float: right;
-    margin-right: 50px;
-    font-size: 26px;
-    margin-top: 60px;
-}
-
-
-/* custom checkbox */
-.checkbox {
-    float: right;
-    position: relative;
-    width: 100px;
+    width: 300px;
     height: 100px;
-    margin-right: 20px;
-    margin-top: 60px;
-}    
-
-input[type="checkbox"] {
-  -webkit-appearance: none;
-    margin: 0;
-    padding: 0;
-    width: 0;
-    height: 0;
-    float: right;
-    border: none;
+    font-size: 25px;
 }
-
-input[type="checkbox"] + label
-{
-    content: '';
-    border: 2px solid rgb(0, 194, 161);
-    display: inline-block;
-    width: 100px;
-    height: 100px;
-}
-
-input[type="checkbox"]:checked + label:before {
-  content: "\2713";
-    color: rgb(0, 194, 161);
-  font-size: 100px;
-    position: absolute;
-    top: -5px;
-    left: 15px;
-    
-}
-
-/*Przycisk Wyślij*/
 
 #third-section button {
     float: right;
@@ -636,10 +591,7 @@ input[type="checkbox"]:checked + label:before {
 
 footer {
     background-color: white;
-    color:  rgb(185, 186, 187);
-    font-size: 25px;
 }
-
 
 footer .main_width {
     height: 100px;
@@ -647,18 +599,13 @@ footer .main_width {
 
 .copyright {
     float: left;
-    line-height: 50px;
 }
 
 footer .logo {
-    line-height: 50px;
     float: right;
-    margin: 0 0 0 110px;
+    margin: 0 0 0 200px;
 }
 
-footer .logo * {
-    color: rgb(185, 186, 187);
-}
 /*Ikony portali społecznościowych*/
 
 .social-icons {
