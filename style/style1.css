@@ -504,8 +504,16 @@ tr:nth-child(2n) {
     color: white;
 }
 
+.price-plan-frame:hover div.price-plan-price {
+    border: 2px solid rgb(0, 194, 161);
+}
+
 .price-plan-frame:hover div.price-plan-price * {
     color: rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover tr:nth-child(2n+1) {
+    background-color: rgb(255, 255, 255);
 }
 
 .price-plan-frame:hover button {
@@ -548,6 +556,7 @@ input {
     width: 800px;
     padding: 20px;
     font-size: 50px;
+    border: 2px solid rgb(0, 194, 161);
 }
 
 textarea {
@@ -557,15 +566,13 @@ textarea {
     padding: 20px;
     font-size: 50px;
     float: left;
+    border: 2px solid rgb(0, 194, 161);
+    resize: none;
 }
 
-input[type="checkbox"] {
-    float: right;
-    vertical-align: top;
-    height: 100px;
-    width: 80px;
-    margin: 40px 10px;
-    /*Ostylować checkbox do końca*/
+::-webkit-input-placeholder {
+    font-family: 'ralewaythin', 'Arial', sans-serif;
+    color: rgb(185, 186, 187);
 }
 
 .checkbox-label {
@@ -575,6 +582,42 @@ input[type="checkbox"] {
     width: 300px;
     height: 100px;
     font-size: 25px;
+    color: rgb(185, 186, 187);
+}
+
+.checkbox {
+    position: relative;
+    float: right;
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.checkbox input {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    float: right;
+    border: none;
+}
+
+.checkbox label {
+    border: 2px solid rgb(0, 194, 161);
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
+
+.checkbox input:checked + label:before {
+    content: "\2713";
+    color: rgb(0, 194, 161);
+    font-size: 100px;
+    position: absolute;
+    top: -8px;
+    left: 15px;
 }
 
 #third-section button {
@@ -591,6 +634,8 @@ input[type="checkbox"] {
 
 footer {
     background-color: white;
+    color: rgb(185, 186, 187);
+    font-size: 25px;
 }
 
 footer .main_width {
@@ -599,12 +644,19 @@ footer .main_width {
 
 .copyright {
     float: left;
+    line-height: 50px;
 }
 
 footer .logo {
+    line-height: 50px;
     float: right;
-    margin: 0 0 0 200px;
+    margin: 0 0 0 110px;
 }
+
+footer .logo * {
+    color: rgb(185, 186, 187);
+}
+
 
 /*Ikony portali społecznościowych*/
 
