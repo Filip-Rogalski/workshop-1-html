@@ -137,7 +137,7 @@ header .main_width {
     float: left;
     height: 100%;
     width: 550px;
-    background-image: url(/images/black_chair.png);
+    background-image: url(../images/black_chair.png);
     background-repeat: no-repeat;
     background-position: -30px 90px;
     background-size: 700px;
@@ -242,12 +242,12 @@ header button {
 
 #first-section article:first-child {
     margin-left: 0px;
-    background-image: url(/images/box1_img.jpg);
+    background-image: url(../images/box1_img.jpg);
     background-size: cover;
 }
 
 #first-section article:nth-child(2) {
-    background-image: url(/images/box2_img.jpg);
+    background-image: url(../images/box2_img.jpg);
     background-size: cover;
 }
 
@@ -532,7 +532,7 @@ tr:nth-child(2n) {
     width: 320px;
     height: 250px;
     float: right;
-    background-image: url(/images/red_chair.png);
+    background-image: url(../images/red_chair.png);
     background-size: cover;
     background-position: center;
 }
@@ -662,17 +662,17 @@ footer .logo * {
 }
 
 #flickr {
-    background-image: url(/images/flickr.png);
+    background-image: url(../images/flickr.png);
 }
 
 #pinterest {
-    background-image: url(/images/pinterest.png);
+    background-image: url(../images/pinterest.png);
 }
 
 #twitter {
-    background-image: url(/images/twitter.png);
+    background-image: url(../images/twitter.png);
 }
 
 #vimeo {
-    background-image: url(/images/vimeo.png);
+    background-image: url(../images/vimeo.png);
 }
