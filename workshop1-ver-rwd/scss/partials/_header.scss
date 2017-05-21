@@ -1,0 +1,32 @@
+header {
+    background: linear-gradient(rgb(249, 250, 251), rgb(208, 207, 217));
+    
+    img {
+        width: 100%;
+    }
+    
+    article {
+        width: 260px;
+    }
+    
+    h1 {
+        font-family: 'ralewaybold', 'Arial', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+        b {
+            color: map-get($colors, baseGreen);
+        }
+    }
+    
+    p {
+        font-family: 'ralewayregular';
+        padding: 1em;
+        
+    }
+    
+    button {
+        margin: 0 auto;
+    }
+}

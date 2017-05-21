@@ -1,0 +1,49 @@
+%form-placeholders {
+    font-family: 'ralewaythin', 'Arial', sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    padding: 5px;
+}
+
+#third-section {
+    img {
+        width: 100%;
+    }
+    input {
+        @extend %form-placeholders;
+        box-sizing: border-box;
+        margin: 10px auto;
+        width: 100%;
+        height: 50px;
+        border: 1px solid map-get($colors, baseGreen);
+    }
+    textarea {
+        @extend %form-placeholders;
+        box-sizing: border-box;
+        margin: 20px 0;
+        width: 100%;
+        height: 150px;
+        border: 1px solid map-get($colors, baseGreen);
+        resize: none;
+    }
+    .checkbox-label {
+        font-family: 'ralewaythin', 'Arial', sans-serif;
+        float: right;
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+        color: rgb(185, 186, 187);
+    }
+    button {
+        font-family: 'ralewaysemibold';
+        float: right;
+        display: block;
+        margin: 20px 15%;
+        width: 70%;
+        height: 50px;
+        border-radius: 10px;
+        font-size: 25px;
+        background-color: map-get($colors, baseGreen);
+    }
+    
+}

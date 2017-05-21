@@ -1,0 +1,678 @@
+/*CSS Reset i ogólne*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'ralewayregular', Arial, sans-serif;
+}
+
+
+/*Ostylowanie głównych elementów*/
+
+nav,
+header,
+section,
+footer {
+    width: 100%;
+}
+
+nav {
+    background-color: black;
+}
+
+header {
+    background: linear-gradient(rgb(249, 250, 251), rgb(208, 207, 217));
+}
+
+.main_width {
+    width: 1300px;
+    border: 0 solid red;
+    margin: auto;
+    background-color: white;
+}
+
+.main_width:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+button {
+    background-color: rgb(0, 194, 161);
+    display: block;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+/*Ostylowanie górnego menu*/
+
+nav div.main_width {
+    background-color: inherit;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+
+/*Ostylowanie "logo"*/
+
+.logo {
+    font-family: 'ralewayregular', Arial, sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    float: left;
+}
+
+.logo b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: rgb(0, 194, 161);
+}
+
+
+/*Ostylowanie menu*/
+
+ol {
+    float: right;
+    display: inline-block;
+}
+
+ol > li {
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    position: relative;
+    margin-left: 70px;
+}
+
+ol > li > ul > li {
+    text-transform: none;
+}
+
+ol > li > ul {
+    display: none;
+}
+
+ol > li:hover > ul {
+    margin-left: -30px;
+    display: block;
+    position: absolute;
+    background: black;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 5px 30px;
+    z-index: 3;
+    line-height: 40px;
+}
+
+ol > li:hover > ul::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0px;
+    height: 0px;
+    top: -20px;
+    left: 50px;
+    border-bottom: 10px solid black;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+}
+
+
+/*Ostylowanie headera*/
+
+header .main_width {
+    background-color: inherit;
+    height: 600px;
+    position: relative;
+}
+
+#big-image {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 550px;
+    background-image: url(../images/black_chair.png);
+    background-repeat: no-repeat;
+    background-position: -30px 90px;
+    background-size: 700px;
+}
+
+#big-description {
+    display: inline-block;
+    float: left;
+    height: 100%;
+    width: 600px;
+    position: relative;
+}
+
+#big-description > h1 {
+    width: 450px;
+    padding: 5px;
+    text-transform: uppercase;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    font-size: 48px;
+}
+
+#big-description b {
+    font-family: 'ralewaybold', "Arial Bold", sans-serif;
+    color: rgb(0, 194, 161);
+}
+
+header p {
+    text-align: center;
+    padding: 0 50px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+header button {
+    margin: 40px auto;
+    width: 320px;
+    height: 70px;
+    border-radius: 15px;
+    font-family: 'ralewayregular', Arial, sans-serif;
+    font-size: 30px;
+}
+
+#header-nav-container {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    top: calc(50% - 50px);
+    z-index: 3;
+    transform: scaleY(0.6);
+}
+
+.nav-arrow {
+    height: 80px;
+    width: 80px;
+    border: 6px solid rgb(0, 194, 161);
+}
+
+.ar-left {
+    float: left;
+    border-top: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transform: rotate(45deg);
+}
+
+.ar-right {
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    float: right;
+    transform: rotate(45deg);
+}
+
+.nav-arrow:hover {
+    transition-duration: 500ms;
+    height: 100px;
+    width: 100px;
+}
+
+
+/*Ostylowanie pierwszej sekcji*/
+
+#first-section {
+    background-color: white;
+}
+
+#first-section div.main_width {
+    background-color: inherit;
+    position: relative;
+    height: 430px;
+}
+
+#first-section article {
+    display: inline-block;
+    position: relative;
+    float: left;
+    height: 280px;
+    width: 405px;
+    margin: 35px 20px;
+}
+
+#first-section article:first-child {
+    margin-left: 0px;
+    background-image: url(../images/box1_img.jpg);
+    background-size: cover;
+}
+
+#first-section article:nth-child(2) {
+    background-image: url(../images/box2_img.jpg);
+    background-size: cover;
+}
+
+#first-section article:hover {
+    background-size: 450px;
+}
+
+#first-section article:last-child {
+    float: right;
+    height: 320px;
+    margin-right: 0px;
+    border: 2px solid grey;
+    position: relative;
+}
+
+
+/*Label na boksach*/
+
+.box-transp {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    bottom: 20px;
+    background-color: #ffffff;
+    opacity: 0.35;
+}
+
+.box-label {
+    position: absolute;
+    left: 20px;
+    width: 160px;
+    height: 35px;
+    bottom: 40px;
+    border-bottom: 10px solid rgb(0, 194, 161);
+}
+
+.box-label h1 {
+    margin: 0;
+    font-family: 'ralewaysemibold', Arial, sans-serif;
+}
+
+
+/*Ostatni box sekcji 1*/
+
+#first-section article:last-child .box-label {
+    position: absolute;
+    top: 40px;
+    left: 30px;
+    display: block;
+}
+
+.box-descr {
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    bottom: 10px;
+    padding: 30px;
+    line-height: 25px;
+    color: grey;
+}
+
+
+/*Ostylowanie sekcji 2 i 3:*/
+
+#second-section {
+    background-color: rgb(241, 241, 241);
+}
+
+.section-header {
+    position: absolute;
+    top: 40px;
+    width: 405px;
+    height: 50px;
+    border-bottom: 10px solid rgb(0, 194, 161);
+    padding-bottom: 10px;
+}
+
+.section-header h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+
+/*Ostylowanie drugiej sekcji*/
+
+#second-section div.main_width {
+    padding-top: 120px;
+    position: relative;
+    height: 850px;
+    background-color: inherit;
+}
+
+#second-section article {
+    position: relative;
+    float: left;
+    height: 650px;
+    width: 405px;
+    margin: 20px 20px;
+}
+
+#second-section article:nth-child(2) {
+    margin-left: 0px;
+}
+
+#second-section article:last-child {
+    float: right;
+    margin-right: 0;
+}
+
+
+/*Price plan*/
+
+.price-plan-frame {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 610px;
+    border: 2px solid rgb(213, 213, 213);
+    background-color: rgb(249, 249, 249);
+}
+
+.price-plan-circle {
+    position: absolute;
+    left: calc(50% - 30px);
+    top: -40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: inherit;
+    background-color: white;
+}
+
+.price-circle-inner {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(213, 213, 213);
+}
+
+.price-label {
+    position: relative;
+    top: 40px;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.price-plan-head {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: rgb(0, 194, 161);
+}
+
+.price-plan-price {
+    position: relative;
+    top: 60px;
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid rgb(213, 213, 213);
+}
+
+.price-plan-price h1,
+.price-plan-price h2 {
+    position: relative;
+    margin: 0 auto;
+    color: rgb(213, 213, 213);
+    text-align: center;
+}
+
+.price-plan-price h1 {
+    margin-top: 30px;
+    font-family: 'ralewaybold';
+    font-size: 60px;
+}
+
+.price-plan-price sup {
+    font-size: 15px;
+}
+
+.price-plan-price h2 {
+    font-family: 'ralewaybold';
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+table {
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    font-size: 30px;
+    color: rgb(122, 123, 124);
+    border-collapse: collapse;
+}
+
+tr {
+    height: 50px;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(2n+1) {
+    background-color: rgb(227, 228, 229);
+}
+
+tr:nth-child(2n) {
+    background-color: rgb(240, 241, 242);
+}
+
+.price-plan-frame button {
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 23px;
+    margin: auto;
+    bottom: 30px;
+    left: 120px;
+}
+
+
+/*Ostylowanie hovera nad price-planami*/
+
+.price-plan-frame:hover {
+    background-color: rgb(0, 194, 161);
+    border: 2px solid rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover > div.price-plan-circle {
+    background-color: rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover div.price-circle-inner {
+    background-color: rgb(248, 249, 250);
+}
+
+.price-plan-frame:hover p.price-plan-head {
+    color: white;
+}
+
+.price-plan-frame:hover div.price-plan-price {
+    border: 2px solid rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover div.price-plan-price * {
+    color: rgb(0, 194, 161);
+}
+
+.price-plan-frame:hover tr:nth-child(2n+1) {
+    background-color: rgb(255, 255, 255);
+}
+
+.price-plan-frame:hover button {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(0, 194, 161);
+}
+
+
+/*Ostylowanie trzeciej sekcji*/
+
+#third-section {
+    background-color: white;
+}
+
+#third-section div.main_width {
+    padding-top: 20px;
+    position: relative;
+    height: 700px;
+}
+
+.small-img {
+    margin: 110px 100px 0 0;
+    width: 320px;
+    height: 250px;
+    float: right;
+    background-image: url(../images/red_chair.png);
+    background-size: cover;
+    background-position: center;
+}
+
+form {
+    position: absolute;
+    top: 140px;
+}
+
+input {
+    margin: 15px 0;
+    height: 80px;
+    width: 800px;
+    padding: 20px;
+    font-size: 50px;
+    border: 2px solid rgb(0, 194, 161);
+}
+
+textarea {
+    margin: 20px 0;
+    height: 230px;
+    width: 800px;
+    padding: 20px;
+    font-size: 50px;
+    float: left;
+    border: 2px solid rgb(0, 194, 161);
+    resize: none;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'ralewaythin', 'Arial', sans-serif;
+    color: rgb(185, 186, 187);
+}
+
+.checkbox-label {
+    margin-top: 40px;
+    font-size: 30px;
+    float: right;
+    width: 380px;
+    height: 60px;
+    font-size: 25px;
+    color: rgb(185, 186, 187);
+}
+
+.checkbox {
+    position: relative;
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+.checkbox input {
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    float: right;
+    border: none;
+}
+
+.checkbox label {
+    border: 2px solid rgb(0, 194, 161);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+
+.checkbox input:checked + label:before {
+    content: "\2713";
+    color: rgb(0, 194, 161);
+    font-size: 50px;
+    position: absolute;
+    top: -5px;
+    left: 6px;
+}
+
+#third-section button {
+    font-family: 'ralewaysemibold';
+    float: right;
+    margin: 0px 40px;
+    width: 400px;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+
+/*Ostylowanie stopki*/
+
+footer {
+    background-color: white;
+    color: rgb(185, 186, 187);
+    font-size: 25px;
+}
+
+footer .main_width {
+    height: 100px;
+}
+
+.copyright {
+    float: left;
+    line-height: 50px;
+}
+
+footer .logo {
+    line-height: 50px;
+    float: right;
+    margin: 0 0 0 110px;
+}
+
+footer .logo * {
+    color: rgb(185, 186, 187);
+}
+
+
+/*Ikony portali społecznościowych*/
+
+.social-icons {
+    width: 50px;
+    height: 50px;
+    float: right;
+    background-size: cover;
+}
+
+#flickr {
+    background-image: url(../images/flickr.png);
+}
+
+#pinterest {
+    background-image: url(../images/pinterest.png);
+}
+
+#twitter {
+    background-image: url(../images/twitter.png);
+}
+
+#vimeo {
+    background-image: url(../images/vimeo.png);
+}

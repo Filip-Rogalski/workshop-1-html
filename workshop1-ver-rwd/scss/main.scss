@@ -1,0 +1,20 @@
+@import 'modules/reset';
+@import 'modules/fonts';
+@import 'modules/colors';
+@import 'modules/grid';
+@import 'partials/nav';
+@import 'partials/header';
+@import 'partials/first-section';
+@import 'partials/second-section';
+@import 'partials/third-section';
+@import 'partials/footer';
+
+button {
+    font-family: 'ralewayregular', sans-serif;
+    display: block;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}

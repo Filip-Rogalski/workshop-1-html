@@ -1,0 +1,126 @@
+#second-section .section-header, #third-section .section-header {
+    margin: 20px 0;
+    height: 50px;
+    padding-bottom: 10px;
+    h1 {
+        border-bottom: 10px solid map-get($colors, baseGreen);
+        font-family: 'ralewayregular', 'Arial', sans-serif;
+        text-transform: uppercase;
+        font-size: 30px;
+        text-align: center;
+    }
+}
+
+#second-section {
+    background-color: map-get($colors, backgroundGrey);
+    font-family: 'ralewayregular';
+    .price-plan-frame {
+        position: relative;
+        width: 100%;
+        height: auto;
+        
+        @media (min-width: 920px) {
+            height: 610px;    
+        }
+        
+        border: 2px solid rgb(213, 213, 213);
+        background-color: rgb(249, 249, 249);
+        .price-plan-circle {
+            display: none;
+            @media (min-width: 920px) {
+                display: block;
+                position: absolute;
+                left: calc(50% - 30px);
+                top: -40px;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: inherit;
+                background-color: white;
+                .price-circle-inner {
+                    position: absolute;
+                    left: 14px;
+                    top: 14px;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: rgb(213, 213, 213);
+                }
+            }
+        }
+        .price-label {
+            width: 100%;
+            height: 80px;
+            margin: 0 auto;
+            text-align: center;
+            .price-plan-head {
+                text-transform: uppercase;
+                line-height: 80px;
+                font-size: 30px;
+                color: rgb(0, 194, 161);
+            }
+        }
+        .price-plan-price {
+            position: relative;
+            margin: 40px auto;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background-color: white;
+            border: 2px solid rgb(213, 213, 213);
+            h1,
+            h2 {
+                position: relative;
+                margin: 0 auto;
+                color: rgb(213, 213, 213);
+                text-align: center;
+            }
+            h1 {
+                margin-top: 30px;
+                font-family: 'ralewaybold';
+                font-size: 60px;
+                sup {
+                    font-size: 15px;
+                }
+            }
+            h2 {
+                font-family: 'ralewaybold';
+                margin-top: 3px;
+                font-size: 18px;
+            }
+        }
+        table {
+            width: 100%;
+            font-size: 30px;
+            color: rgb(122, 123, 124);
+            border-collapse: collapse;
+            tr {
+                height: 50px;
+            }
+            td {
+                text-align: center;
+            }
+            tr:nth-child(2n+1) {
+                background-color: rgb(227, 228, 229);
+            }
+            tr:nth-child(2n) {
+                background-color: rgb(240, 241, 242);
+            }
+        }
+        button {
+            width: 160px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 23px;  
+            margin: 40px auto;
+            background-color: map-get($colors, baseGreen);
+            bottom: 0;
+            @media (min-width: 920px) {
+//                Zrobić żeby karty z planami miały tę samą wysokość //
+            }
+            
+        }   
+    }
+}
+
+/* Dodac hoover dla widoków desktopowych */

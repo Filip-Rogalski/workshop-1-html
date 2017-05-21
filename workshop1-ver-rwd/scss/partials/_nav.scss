@@ -1,0 +1,49 @@
+nav {
+    background-color: map-get($colors, navColor);
+    color: white;
+    .logo {
+        font-family: 'ralewayregular', Arial, sans-serif;
+        font-size: 30px;
+        line-height: 2em;
+        text-transform: uppercase;
+        text-align: center;
+        width: 7em;
+        margin: 0 auto;
+        b {
+            font-family: 'ralewaybold', "Arial Bold", sans-serif;
+            color: map-get($colors, baseGreen);
+        }
+        @media (min-width: 321px) {
+            float: left;
+        }
+        @media (min-width: 721px) {
+            line-height: em;
+        }
+    }
+    .menu {
+        height: 60px;
+        ol {
+            @extend %clearfix;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 20px;
+            padding: 0;
+            list-style: none;
+            line-height: 1em;
+            margin: 0 auto;
+            @media (min-width: 721px) {
+                margin-top: 20px;
+                float: right;
+                display: inline-block;
+                li {
+                    display: inline-block;
+                    margin-left: 10px;
+                }
+            }
+            @media (min-width: 321px) {
+                float: right;
+            }
+        }
+    }
+}
