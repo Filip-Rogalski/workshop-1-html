@@ -8,13 +8,5 @@
 @import 'partials/second-section';
 @import 'partials/third-section';
 @import 'partials/footer';
+@import 'modules/aditionals';
 
-button {
-    font-family: 'ralewayregular', sans-serif;
-    display: block;
-    border: none;
-    outline: none;
-    color: white;
-    text-transform: uppercase;
-    cursor: pointer;
-}

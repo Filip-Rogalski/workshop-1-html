@@ -1,6 +1,5 @@
 footer {
-    padding: 10px 0;
-    background-color: white;
+    background-color: map-get($colors, navAndFooterColor);
     color: rgb(185, 186, 187);
     font-family: 'ralewayregular', 'Arial', sans-serif;
     p {

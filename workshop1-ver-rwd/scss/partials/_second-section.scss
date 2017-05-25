@@ -10,7 +10,6 @@
         text-align: center;
     }
 }
-
 #second-section {
     background-color: map-get($colors, backgroundGrey);
     font-family: 'ralewayregular';
@@ -18,11 +17,9 @@
         position: relative;
         width: 100%;
         height: auto;
-        
-        @media (min-width: 920px) {
-            height: 610px;    
-        }
-        
+        @media (min-width: 769px) {
+            height: 700px;
+        };
         border: 2px solid rgb(213, 213, 213);
         background-color: rgb(249, 249, 249);
         .price-plan-circle {
@@ -54,8 +51,10 @@
             margin: 0 auto;
             text-align: center;
             .price-plan-head {
+                margin-top: 20px;
                 text-transform: uppercase;
-                line-height: 80px;
+                padding: 25px 10px;
+                line-height: 35px;
                 font-size: 30px;
                 color: rgb(0, 194, 161);
             }
@@ -91,7 +90,7 @@
         }
         table {
             width: 100%;
-            font-size: 30px;
+            font-size: 25px;
             color: rgb(122, 123, 124);
             border-collapse: collapse;
             tr {
@@ -99,6 +98,7 @@
             }
             td {
                 text-align: center;
+                padding: 10px;
             }
             tr:nth-child(2n+1) {
                 background-color: rgb(227, 228, 229);
@@ -110,16 +110,51 @@
         button {
             width: 160px;
             height: 40px;
-            border-radius: 10px;
             font-size: 23px;  
             margin: 40px auto;
+        }  
+        &:hover {
             background-color: map-get($colors, baseGreen);
-            bottom: 0;
-            @media (min-width: 920px) {
-//                Zrobić żeby karty z planami miały tę samą wysokość //
+            border: 2px solid map-get($colors, baseGreen);
+            
+            div.price-plan-circle {
+                background-color: map-get($colors, baseGreen);
             }
             
-        }   
+            div.price-circle-inner {
+                background-color: map-get($colors, lightGrey);
+            }
+            
+            p.price-plan-head {
+                color: white;
+            }
+            
+            div.price-plan-price {
+                border: 2px solid map-get($colors, baseGreen);
+            }
+            
+            div.price-plan-price * {
+                color: map-get($colors, baseGreen);    
+            }
+            
+            tr:nth-child(2n+1) {
+                background-color: rgb(255, 255, 255);
+            }
+            
+            
+            button {
+                color: map-get($colors, baseGreen);
+                background-color: white;
+            }
+        }
+    }
+    @media (min-width: 769px) {
+        article:nth-child(1) button {
+            margin-top: 140px;
+        }
+        article:nth-child(2) button {
+            margin-top: 90px;
+        }
     }
 }
 

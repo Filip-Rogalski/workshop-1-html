@@ -1,5 +1,9 @@
 nav {
-    background-color: map-get($colors, navColor);
+    background-color: map-get($colors, navAndFooterColor);
+    padding-bottom: 20px;
+    @media (min-width: 520px) {
+            padding: 0;
+        }
     color: white;
     .logo {
         font-family: 'ralewayregular', Arial, sans-serif;
@@ -13,11 +17,10 @@ nav {
             font-family: 'ralewaybold', "Arial Bold", sans-serif;
             color: map-get($colors, baseGreen);
         }
-        @media (min-width: 321px) {
+        @media (min-width: 769px) {
             float: left;
         }
-        @media (min-width: 721px) {
-            line-height: em;
+        @media (min-width: 769px) {
         }
     }
     .menu {
@@ -31,17 +34,18 @@ nav {
             padding: 0;
             list-style: none;
             line-height: 1em;
-            margin: 0 auto;
-            @media (min-width: 721px) {
-                margin-top: 20px;
-                float: right;
-                display: inline-block;
+            li {
+                margin-bottom: 10px;
+            }
+            @media (min-width: 520px) {
+                margin: 20px auto;
                 li {
                     display: inline-block;
                     margin-left: 10px;
+                    margin-bottom: 0;
                 }
             }
-            @media (min-width: 321px) {
+            @media (min-width: 769px) {
                 float: right;
             }
         }

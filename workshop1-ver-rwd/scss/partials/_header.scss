@@ -22,11 +22,24 @@ header {
     
     p {
         font-family: 'ralewayregular';
+        text-align: center;
         padding: 1em;
         
     }
     
-    button {
+    button { 
+        width: 220px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 23px;  
+        margin: 40px auto;
         margin: 0 auto;
     }
+    
+    .col-6:first-child {
+        @media (min-width: 769px) {
+            margin-top: 20px;
+        }
+    }
+    
 }
