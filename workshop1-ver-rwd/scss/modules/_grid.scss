@@ -13,6 +13,9 @@
 
 .container {
     width: 100%;
+    @media (min-width: 1201px) {
+        width: 1200px;
+    }
     max-width: 1200px;
     margin: 0 auto;
     .row {
@@ -64,14 +67,14 @@
         }
         @for $i from 1 through 3 {
             .col-#{$i} {
-                @media (max-width: 320px) {
+                @media (max-width: 425px) {
                     width: 50%;
                 }
             }
         }
         @for $i from 4 through 12 {
             .col-#{$i} {
-                @media (max-width: 320px) {
+                @media (max-width: 425px) {
                     width: 100%;
                     padding: 0 13px;
                 }

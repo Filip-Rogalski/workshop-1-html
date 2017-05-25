@@ -1,14 +1,11 @@
 header {
     background: linear-gradient(rgb(249, 250, 251), rgb(208, 207, 217));
-    
     img {
         width: 100%;
     }
-    
     article {
         width: 260px;
     }
-    
     h1 {
         font-family: 'ralewaybold', 'Arial', sans-serif;
         text-transform: uppercase;
@@ -19,27 +16,22 @@ header {
             color: map-get($colors, baseGreen);
         }
     }
-    
     p {
         font-family: 'ralewayregular';
         text-align: center;
         padding: 1em;
-        
     }
-    
-    button { 
+    button {
         width: 220px;
         height: 40px;
         border-radius: 10px;
-        font-size: 23px;  
+        font-size: 23px;
         margin: 40px auto;
         margin: 0 auto;
     }
-    
     .col-6:first-child {
         @media (min-width: 769px) {
             margin-top: 20px;
         }
     }
-    
 }
