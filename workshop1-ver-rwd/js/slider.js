@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('hej');
-    var bigScreen = window.matchMedia("screen and (min-width: 769px) ")
+    var headerImages = document.querySelectorAll('.big-image');
+    var headerImageToggler = function () {
+        headerImages.forEach(function (image) {
+            image.classList.toggle('invisible');
+        });
+    };
+    var bigScreen = window.matchMedia("screen and (min-width: 769px)")
     if (bigScreen.matches) {
-        console.log('big screen!');
-        
+        setInterval(headerImageToggler, 3000);
         //Tutaj zainstalować slider:
         //1. załadować ramki ze zdjęciami;
         //2. dodać ptaszki nawigacyjne;
-        
     }
     else {
         console.log('small screen!');
