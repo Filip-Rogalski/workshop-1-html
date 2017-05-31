@@ -2,9 +2,9 @@ nav {
     background-color: map-get($colors, navAndFooterColor);
     padding-bottom: 20px;
     @media (min-width: 520px) {
-            padding: 0;
-        }
-    color: white;    
+        padding: 0;
+    }
+    color: white;
     .logo {
         font-family: 'ralewayregular', Arial, sans-serif;
         font-size: 30px;
@@ -20,8 +20,7 @@ nav {
         @media (min-width: 769px) {
             float: left;
         }
-        @media (min-width: 769px) {
-        }
+        @media (min-width: 769px) {}
     }
     .menu {
         height: 60px;
@@ -35,7 +34,7 @@ nav {
             list-style: none;
             line-height: 1em;
             li {
-                margin-bottom: 10px;
+                vertical-align: top;
             }
             @media (min-width: 520px) {
                 margin: 20px auto;
