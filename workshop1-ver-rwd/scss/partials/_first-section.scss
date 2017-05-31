@@ -18,6 +18,12 @@
                 width: calc(100% - 26px);
                 z-index: 2;
             }
+            &:hover {
+                .box-transp,
+                .box-label {
+                    display: none;
+                }
+            }
         }
     }
     .image-container {
@@ -31,7 +37,7 @@
         text-align: left;
         margin: 16px;
         padding: 0.3em 0;
-        width: 9em;
+        width: 9.5em;
         border-bottom: 10px solid map-get($colors, baseGreen);
     }
     .description {

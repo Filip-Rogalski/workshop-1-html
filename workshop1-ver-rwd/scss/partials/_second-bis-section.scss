@@ -1,0 +1,60 @@
+#second-bis-section {
+    background-color: map-get($colors, lightGrey);
+    #checkbox {
+        background-color: red;
+        height: 50px;
+        width: 50px;
+        float: left;
+    }
+    
+    
+    .checkbox-label {
+        margin: 10px auto;
+        font-family: 'ralewaythin', 'Arial', sans-serif;
+        float: left;
+        width: 50%;
+        height: 50px;
+        font-size: 20px;
+        color: rgb(185, 186, 187);
+        line-height: 50px;
+    }
+    #summary-frame {
+        box-sizing: border-box;
+        padding: 10px;
+        font-family: 'ralewayregular', 'Arial', sans-serif;
+        color: map-get($colors, baseGreen);
+        width: 100%;
+        height: 160px;
+        background-color: white;
+        
+        #summary-content {
+            width: calc(60% - 4px);
+            height: 100px;
+            float: left;
+            margin-bottom: 10px;
+            border-bottom: 4px solid map-get($colors, lightGrey);
+            border-right: 4px solid map-get($colors, lightGrey);
+            
+        }
+        
+        #summary-pricelist {
+            float: right;
+            width: 40%;
+            height: 100px;
+            margin-bottom: 10px;
+            border-bottom: 4px solid map-get($colors, lightGrey);
+        }
+        
+        #summary-total-label {
+            width: 60%;
+            height: 20px;
+            float: left;
+        }
+        
+        #summary-total-sum {
+            width: 40%;
+            height: 20px;
+            float: right;
+        }
+    }
+}

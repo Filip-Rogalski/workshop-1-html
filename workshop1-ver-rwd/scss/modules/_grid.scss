@@ -32,6 +32,11 @@
             &.go-right {
                 float: right;
             }
+            &.disappear {
+                @media (max-width: 768px) {
+                    display: none;
+                }
+            }
             .row {
                 [class*='colsub-'] {
                     @extend %clearfix;
