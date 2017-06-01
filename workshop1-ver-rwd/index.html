@@ -164,19 +164,19 @@
     </section>
     <section id="second-bis-section" class="container">
         <div class="row">
-          
+          <form id='order-form'>
            
             <div class="col-4">
                 <div class="section-header">
                     <h1>skomponuj swoje krzesło
                     </h1> </div>
-                <form>
+                
                     <input id='chair-type' list="chair-types" name="type" placeholder="Wybierz rodzaj">
                     <datalist id="chair-types">
-                        <option value="Chair Clair">
-                            <option value="Chair Margarita">
-                                <option value="Chair Selena">
-                                    <option value="Chair Symphony">
+                        <option value="Chair Clair" data-price=200>
+                        <option value="Chair Margarita">
+                        <option value="Chair Selena">
+                        <option value="Chair Symphony">
                     </datalist>
                     <input id='chair-color' list="chair-colors" name="color" placeholder="Wybierz kolor">
                     <datalist id="chair-colors">
@@ -185,7 +185,7 @@
                                 <option value="pomarańczowy">
                                     <option value="beżowy">
                     </datalist>
-                    <input id='chair-fabric' list="chair-fabric" name="fabric" placeholder="Wybierz materiał">
+                    <input id='chair-fabric' list="chair-fabrics" name="fabric" placeholder="Wybierz materiał">
                     <datalist id="chair-fabrics">
                         <option value="tkanina">
                             <option value="skóra">
@@ -194,10 +194,6 @@
                         <input id='checkbox' type='checkbox' name='transport'>
                         <div class="checkbox-label">Transport</div>
                     </div>
-                    
-                    <button>Akceptuj</button> 
-                    
-                </form>
             </div>
             
              <div class="col-4 disappear"><img src='images/red_chair.png' alt='red chair' /></div>
@@ -218,6 +214,7 @@
                  <button type="submit">Zamawiam</button>
                     
             </div>
+            </form>
         </div>
     </section>
     <section id="third-section" class="container">

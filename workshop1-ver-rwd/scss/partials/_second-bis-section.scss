@@ -34,6 +34,10 @@
             margin-bottom: 10px;
             border-bottom: 4px solid map-get($colors, lightGrey);
             border-right: 4px solid map-get($colors, lightGrey);
+            span {
+                color: black;
+                margin-left: 10px;
+            }
             
         }
         
