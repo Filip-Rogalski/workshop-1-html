@@ -47,6 +47,8 @@
             height: 100px;
             margin-bottom: 10px;
             border-bottom: 4px solid map-get($colors, lightGrey);
+            text-align: right;
+            color: goldenrod;
         }
         
         #summary-total-label {
@@ -59,6 +61,8 @@
             width: 40%;
             height: 20px;
             float: right;
+            text-align: right;
+            color: red;
         }
     }
 }
