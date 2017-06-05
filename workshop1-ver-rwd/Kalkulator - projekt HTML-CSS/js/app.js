@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', function () {
         summarySum.innerText = sum;
     }
     /* Handle transport checkbox and summary */
+    var panelLeft = document.querySelector('.panel_left')
+        , panelRight = document.querySelector('.panel_right');
+    
     var transport = document.getElementById('transport')
         , summaryTransportLabel = panelLeft.querySelector('.transport')
         , summaryTransportPrice = panelRight.querySelector('.transport');
@@ -68,8 +71,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var productTypes = document.querySelectorAll('.drop_down_list:first-child li')
         , productColors = document.querySelectorAll('.drop_down_list:nth-child(2) li')
         , productFabrics = document.querySelectorAll('.drop_down_list:nth-child(3) li');
-    var panelLeft = document.querySelector('.panel_left')
-        , panelRight = document.querySelector('.panel_right');
     var summaryTypeLabel = panelLeft.querySelector('.title')
         , summaryTypePrice = panelRight.querySelector('.title')
         , summaryColorLabel = panelLeft.querySelector('.color')
