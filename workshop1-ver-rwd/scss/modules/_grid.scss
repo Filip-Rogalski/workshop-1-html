@@ -61,7 +61,7 @@
         }
         @for $i from 4 through 12 {
             .col-#{$i} {
-                @media (max-width: 768px) {
+                @media (max-width: 815px) {
                     width: 100%;
                     padding-left: 20%;   
                     padding-right: 20%;
