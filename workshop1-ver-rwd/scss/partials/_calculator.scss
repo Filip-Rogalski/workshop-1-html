@@ -2,7 +2,8 @@
     .col-4 {
         .section-header {
             margin: 20px 0;
-            height: 50px;
+            height: auto;
+            min-height: 50px;
             padding-bottom: 10px;
             h1 {
                 border-bottom: 10px solid map-get($colors, baseGreen);
@@ -13,11 +14,13 @@
             }
         }
     }
+    /*
     .col-4:first-child {
         .section-header {
             height: 60px;
         }
     }
+    */
     background-color: map-get($colors, lightGrey);
     .drop_down_list {
         box-sizing: border-box;
@@ -147,9 +150,12 @@
     .sum_label {
         width: 60%;
         height: 20px;
+        font-size: 20px;
         float: left;
     }
     .sum {
+        font-family: 'ralewaybold', 'Arial', sans-serif;
+        font-size: 23px;
         width: 40%;
         height: 20px;
         float: right;
@@ -172,18 +178,19 @@
         transform: rotate(180deg);
     }
     .list_panel {
+        box-sizing: border-box;
+        width: calc(100% + 2px);
         background-color: white;
         border: 1px solid #ccc;
-        width: 288px;
         padding-left: 15px;
         padding-bottom: 10px;
         list-style: none;
         margin: 0;
-        left: 0px;
-        z-index: 2;
+        left: -1px;
         position: absolute;
         top: 54px;
         display: none;
+        z-index: 3;
     }
     .list_panel li {
         margin-top: 10px;

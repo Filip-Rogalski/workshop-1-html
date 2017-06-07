@@ -1,4 +1,10 @@
 #second-bis-section {
+
+/* To jest kalkulator, który napisałem sam. Na razie wyłączony: */
+    
+    display: none;
+    
+    
     background-color: map-get($colors, lightGrey);
     #checkbox {
         background-color: red;

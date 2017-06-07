@@ -1,23 +1,32 @@
 document.addEventListener('DOMContentLoaded', function () {
+
     /* Pobieram elementy z DOM-u */
+    
     const arrows = document.querySelectorAll('.list_arrow')
         , checklistItems = document.querySelectorAll('.drop_down_list li')
         , form = document.querySelector('#calculator .form')
         , panelLeft = document.querySelector('.panel_left')
         , panelRight = panelLeft.nextElementSibling;
+    
     /* Handle dropdown */
-    arrows.forEach(function (arrow) {
-        arrow.addEventListener('click', function () {
-            this.classList.toggle('turn_up');
-            if (this.nextElementSibling.style.display == 'block') {
-                this.nextElementSibling.style.display = 'none';
+    
+    function handleArrow(arrow){
+        arrow.classList.toggle('turn_up');
+            if (arrow.nextElementSibling.style.display == 'block') {
+                arrow.nextElementSibling.style.display = 'none';
             }
             else {
-                this.nextElementSibling.style.display = 'block';
+                arrow.nextElementSibling.style.display = 'block';
             }
+    }
+    
+    arrows.forEach(function (arrow) {
+        arrow.addEventListener('click', function () {
+            handleArrow(this);
         })
     })
 
+    
     function handleDropdown(element) {
         let choiceLabel = element.parentElement.parentElement.firstElementChild;
         choiceLabel.innerText = element.innerText;
@@ -28,7 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
             handleDropdown(this);
         })
     });
+    
     /* Handle order sum */
+    
     var transportPrice = 0
         , productPrice = 0
         , fabricFactor = 1
@@ -54,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function putTransportOnPricelist() {
+    function handleTransportCost() {
         if (transport.checked) {
             transportPrice = parseInt(transport.dataset.transportPrice);
             updateSum();
@@ -66,9 +77,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     transport.addEventListener('click', function () {
             putTransportOnSummaryPanel();
-            putTransportOnPricelist();
-        })
-        /* Handle product Type */
+            handleTransportCost();
+        });
+    
+    /* Handle product Type */
+    
     const productTypes = [checklistItems[0], checklistItems[1], checklistItems[2]]
         , productColors = [checklistItems[3], checklistItems[4], checklistItems[5]]
         , productFabrics = [checklistItems[6], checklistItems[7]]
@@ -79,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         , summaryFabricLabel = panelLeft.firstElementChild.nextElementSibling.nextElementSibling
         , summaryFabricPrice = panelRight.firstElementChild.nextElementSibling.nextElementSibling
         , summarySum = panelRight.nextElementSibling.nextElementSibling;
+    
     productTypes.forEach(function (type) {
         type.addEventListener('click', function () {
             productPrice = parseInt(this.dataset.price);
@@ -87,12 +101,14 @@ document.addEventListener('DOMContentLoaded', function () {
             updateSum();
         })
     });
+    
     productColors.forEach(function (color) {
         color.addEventListener('click', function () {
             summaryColorLabel.innerText = this.innerText;
             summaryColorPrice.innerText = 0;
         })
     });
+    
     productFabrics.forEach(function (fabric) {
         fabric.addEventListener('click', function () {
             fabricFactor = parseFloat(this.dataset.factor);
