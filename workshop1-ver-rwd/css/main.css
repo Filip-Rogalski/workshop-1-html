@@ -915,7 +915,7 @@ header .invisible {
 }
 
 #calculator .active {
-  background: url("../images/form_ok.jpg");
+  background: url("./images/form_ok.jpg");
   width: 48px;
   height: 40px;
 }
