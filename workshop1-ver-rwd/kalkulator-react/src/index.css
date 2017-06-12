@@ -46,10 +46,6 @@ body {
     }
 }
 
-.disappear {
-    display: none;
-}
-
 .turn_upside_down {
     transform: rotate(180deg);
 }
