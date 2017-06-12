@@ -17,11 +17,11 @@ class OrderCalculator extends React.Component {
         <div className="row">
             <div className="col-6">
                 <div className="section-header">
-                    <h1>skomponuj swoje krzesło</h1> 
+                    <h1>skomponuj swój fotel</h1> 
                 </div>
-                <DropDownList category="typ" items={[["Clair", 300], ["Margarita", 320], ["Selena", 350], ["Symphony", 400]]} handler={this.handleTypeChoice}/>
-                <DropDownList category="kolor" items={[["Czerwony",0], ["Czarny",0], ["Pomarańczowy",20]]} handler={this.handleColorChoice}/>
-                <DropDownList category="materiał" items={[["Tkanina",0], ["Skóra",0.25]]} handler={this.handleFabricChoice}/>
+                <OptionPicker category="typ" items={[["Clair", 300], ["Margarita", 320], ["Selena", 350], ["Symphony", 400]]} handler={this.handleTypeChoice}/>
+                <OptionPicker category="kolor" items={[["Czerwony",0], ["Czarny",0], ["Pomarańczowy",20]]} handler={this.handleColorChoice}/>
+                <OptionPicker category="materiał" items={[["Tkanina",0], ["Skóra",0.25]]} handler={this.handleFabricChoice}/>
                 <div className="checkbox check-box">
                     <input type="checkbox" id="transport" data-transport-price="200" onChange={this.handleTransportCheckbox}/>
                     <label htmlFor="transport">Transport</label>
@@ -39,7 +39,7 @@ class OrderCalculator extends React.Component {
     
     handleTypeChoice(e){
         this.handleListPanel(e.target);
-        this.setState({chairType: e.target.innerHTML,  chairTypePrice: e.target.dataset.price});
+        this.setState({chairType: e.target.innerHTML,  chairTypePrice: e.target.dataset.price, dropdownVisibility1: 0});
     }
     
     handleColorChoice(e) {
@@ -56,37 +56,8 @@ class OrderCalculator extends React.Component {
         this.setState({transport: e.target.checked * 200});
     }
 }
-
-class SummaryPanel extends React.Component {
-  render() {
-    return (
-        <div className="col-6">
-            <div className="section-header">
-                <h1>PODSUMOWANIE</h1>
-            </div>
-            <div className="summary_panel">
-                <ul className="panel_left">
-                    <li className="title">{this.props.chairType}</li>
-                    <li className="color">{this.props.chairColor}</li>
-                    <li className="pattern">{this.props.chairFabric}</li>
-                    <li className="transport">{(this.props.transport !== 0) ? 'Transport' : ''}</li>
-                </ul>
-                <ul className="panel_right">
-                    {(this.props.chairTypePrice !== 0) && <li className="title value">{this.props.chairTypePrice}</li>}
-                    {(this.props.colorPrice !== 0) && <li className="color value">{this.props.colorPrice}</li>}
-                    {(this.props.fabricFactor !== 0) && <li className="pattern value">{parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10)}</li>}
-                    {(this.props.transport !== 0) && <li className="transport value">{this.props.transport}</li>}
-                </ul>
-                <div className="sum_label">SUMA</div>
-                     {(this.props.chairTypePrice !== 0) && <div className="sum">{parseInt(this.props.chairTypePrice, 10) + parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10) + parseInt(this.props.colorPrice, 10) + parseInt(this.props.transport, 10)}</div>}
-            </div>
-            <button>Zamawiam</button>
-        </div>
-    );
-  }
-}
                
-class DropDownList extends React.Component {
+class OptionPicker extends React.Component {
     constructor(props) {
         super();
         this.arrowHandler = this.arrowHandler.bind(this);
@@ -118,6 +89,35 @@ class ListItem extends React.Component {
     render() {
         return <li data-price={this.props.dataValue} onClick={this.props.handler}>{this.props.value}</li>
     }
+}
+
+class SummaryPanel extends React.Component {
+  render() {
+    return (
+        <div className="col-6">
+            <div className="section-header">
+                <h1>PODSUMOWANIE</h1>
+            </div>
+            <div className="summary_panel">
+                <ul className="panel_left">
+                    <li className="title">{this.props.chairType}</li>
+                    <li className="color">{this.props.chairColor}</li>
+                    <li className="pattern">{this.props.chairFabric}</li>
+                    <li className="transport">{(this.props.transport !== 0) ? 'Transport' : ''}</li>
+                </ul>
+                <ul className="panel_right">
+                    {(this.props.chairTypePrice !== 0) && <li className="title value">{this.props.chairTypePrice}</li>}
+                    {(this.props.colorPrice !== 0) && <li className="color value">{this.props.colorPrice}</li>}
+                    {(this.props.fabricFactor !== 0) && <li className="pattern value">{parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10)}</li>}
+                    {(this.props.transport !== 0) && <li className="transport value">{this.props.transport}</li>}
+                </ul>
+                <div className="sum_label">SUMA</div>
+                     {(this.props.chairTypePrice !== 0) && <div className="sum">{parseInt(this.props.chairTypePrice, 10) + parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10) + parseInt(this.props.colorPrice, 10) + parseInt(this.props.transport, 10)}</div>}
+            </div>
+            <button>Zamawiam</button>
+        </div>
+    );
+  }
 }
                      
 ReactDOM.render(<OrderCalculator />, document.getElementById('root'));
