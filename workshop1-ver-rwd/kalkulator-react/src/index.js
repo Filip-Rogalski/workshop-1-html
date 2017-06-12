@@ -10,7 +10,7 @@ class OrderCalculator extends React.Component {
     this.handleColorChoice = this.handleColorChoice.bind(this);
     this.handleFabricChoice = this.handleFabricChoice.bind(this);
     this.handleTransportCheckbox = this.handleTransportCheckbox.bind(this);
-    this.state = {chairType: '', chairTypePrice: 0, chairColor: '', colorPrice: 0, chairFabric: '', fabricFactor: 0, transport: 0};
+    this.state = {optionList1: 0, optionList2: 0, optionList3: 0, chairType: '', chairTypePrice: 0, chairColor: '', colorPrice: 0, chairFabric: '', fabricFactor: 0, transport: 0};
   }
 
   render() {
@@ -23,21 +23,17 @@ class OrderCalculator extends React.Component {
                 <div className="drop_down_list">
                     <span className="list_label">Wybierz typ</span>
                     <span className="list_arrow" onClick={this.handleArrow}></span>
-                    <ul className="list_panel disappear">
-                        <li data-price='300' onClick={this.handleTypeChoice}>Clair</li>
-                        <li data-price='320' onClick={this.handleTypeChoice}>Margarita</li>
-                        <li data-price='350' onClick={this.handleTypeChoice}>Selena</li>
-                        <li data-price='400' onClick={this.handleTypeChoice}>Symphony</li>
-                    </ul>
+                    <OptionList visibility={this.state.optionList1} items={[["Clair", 300], ["Margarita", 320], ["Selena", 350], ["Symphony", 400]]} handler={this.handleTypeChoice} />
                 </div>
+                <DropDownList items={[["Clair", 300], ["Margarita", 320], ["Selena", 350], ["Symphony", 400]]} handler={this.handleTypeChoice}/>
+                <DropDownList items={[["Czerwony",0], ["Czarny",0], ["Pomarańczowy",20]]} handler={this.handleColorChoice}/>
+        
+        
+        
                 <div className="drop_down_list">
                     <span className="list_label">Wybierz kolor</span>
                     <span className="list_arrow" onClick={this.handleArrow}></span>
-                    <ul className="list_panel disappear">
-                        <li data-price='0' onClick={this.handleColorChoice}>Czerwony</li>
-                        <li data-price='0' onClick={this.handleColorChoice}>Czarny</li>
-                        <li data-price='0' onClick={this.handleColorChoice}>Pomarańczowy</li>
-                    </ul>
+                    <OptionList visibility={this.state.optionList2} items={[["Czerwony",0], ["Czarny",0], ["Pomarańczowy",20]]} handler={this.handleColorChoice} />
                 </div>
                 <div className="drop_down_list">
                     <span className="list_label">Wybierz materiał</span>
@@ -58,14 +54,14 @@ class OrderCalculator extends React.Component {
   }
     
     handleArrow(e) {
-        e.target.nextElementSibling.classList.toggle('disappear');
+        (((this.state.optionList1 !== 1) && (this.setState({optionList1: 1}))) ||
+        ((this.state.optionList1 !== 0) && (this.setState({optionList1: 0}))));
         e.target.classList.toggle('turn_upside_down');
     }
     
     handleListPanel(element) {
         element.parentElement.parentElement.firstElementChild.innerHTML = element.innerHTML;
         element.parentElement.parentElement.classList.add('chosen');
-        element.parentElement.classList.toggle('disappear');
     }
     
     handleTypeChoice(e){
@@ -103,13 +99,13 @@ class SummaryPanel extends React.Component {
                     <li className="transport">{(this.props.transport !== 0) ? 'Transport' : ''}</li>
                 </ul>
                 <ul className="panel_right">
-                    <li className="title value">{(this.props.chairTypePrice !== 0) ? this.props.chairTypePrice : '' }</li>
-                    <li className="color value">{(this.props.colorPrice !== 0) ? this.props.colorPrice : ''}</li>
-                    <li className="pattern value">{(this.props.fabricFactor !== 0) ? parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10) : ''}</li>
-                    <li className="transport value">{(this.props.transport !== 0) ? this.props.transport : ''}</li>
+                    {(this.props.chairTypePrice !== 0) && <li className="title value">{this.props.chairTypePrice}</li>}
+                    {(this.props.colorPrice !== 0) && <li className="color value">{this.props.colorPrice}</li>}
+                    {(this.props.fabricFactor !== 0) && <li className="pattern value">{parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10)}</li>}
+                    {(this.props.transport !== 0) && <li className="transport value">{this.props.transport}</li>}
                 </ul>
                 <div className="sum_label">SUMA</div>
-                <div className="sum">{(this.props.chairTypePrice !== 0) ? (parseInt(this.props.chairTypePrice, 10) + parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10) + parseInt(this.props.transport, 10)) : ''}</div>
+                     {(this.props.chairTypePrice !== 0) && <div className="sum">{parseInt(this.props.chairTypePrice, 10) + parseInt(this.props.chairTypePrice * this.props.fabricFactor, 10) + parseInt(this.props.colorPrice, 10) + parseInt(this.props.transport, 10)}</div>}
             </div>
             <button>Zamawiam</button>
         </div>
@@ -117,4 +113,52 @@ class SummaryPanel extends React.Component {
   }
 }
 
+class ListItem extends React.Component {
+    render() {
+        return <li data-price={this.props.dataValue} onClick={this.props.handler}>{this.props.value}</li>
+    }
+}
+                     
+class OptionList extends React.Component {
+    render() {
+        return (
+            (this.props.visibility !== 0) && 
+            <ul className="list_panel">
+                {this.props.items.map(item => (
+                    <ListItem key={item[0]} dataValue={item[1]} handler={this.props.handler} value={item[0]} />
+                ))}
+            </ul>
+        )
+    }
+}
+
+class DropDownList extends React.Component {
+    constructor(props) {
+        super();
+        this.arrowHandler = this.arrowHandler.bind(this);
+        this.state = {optionsVisibility: 0};
+    }
+    
+    arrowHandler(e) {
+        (((this.state.optionsVisibility !== 1) && (this.setState({optionsVisibility: 1}))) ||
+        ((this.state.optionsVisibility !== 0) && (this.setState({optionsVisibility: 0}))));
+        e.target.classList.toggle('turn_upside_down');
+    }
+    
+    render() {
+        return (
+            <div className="drop_down_list">
+                <span className="list_label">Wybierz typ</span>
+                <span className="list_arrow" onClick={this.arrowHandler}></span>
+                {(this.state.optionsVisibility !== 0) && <ul className="list_panel">
+                {this.props.items.map(item => (
+                    <ListItem key={item[0]} dataValue={item[1]} handler={this.props.handler} value={item[0]} />
+                ))}
+            </ul>}
+            </div>
+        )
+    }
+    
+}
+                     
 ReactDOM.render(<OrderCalculator />, document.getElementById('root'));
