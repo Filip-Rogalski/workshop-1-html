@@ -100,10 +100,10 @@ class SummaryPanel extends React.Component {
             </div>
             <div className="summary_panel">
                 <ul className="panel_left">
-                    <li className="title">{this.props.chairType}</li>
-                    <li className="color">{this.props.chairColor}</li>
-                    <li className="pattern">{this.props.chairFabric}</li>
-                    <li className="transport">{(this.props.transport !== 0) ? 'Transport' : ''}</li>
+                    {(this.props.chairType !== '') && <li className="title">{this.props.chairType}</li>}
+                    {(this.props.chairColor !== '') && <li className="color">{this.props.chairColor}</li>}
+                    {(this.props.chairFabric !== '') && <li className="pattern">{this.props.chairFabric}</li>}
+                    {(this.props.transport !== 0) && <li className="transport">Transport</li>}
                 </ul>
                 <ul className="panel_right">
                     {(this.props.chairTypePrice !== 0) && <li className="title value">{this.props.chairTypePrice}</li>}

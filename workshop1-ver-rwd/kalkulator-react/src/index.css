@@ -205,7 +205,7 @@ ul.panel_left li, ul.panel_right li {
     margin-left: 10px;
 }
 
-ul.panel_left li:first-child, ul.panel_right li:first-child {
+ul.panel_left li.title, ul.panel_right li.title {
     margin-left: 0;
     text-transform: uppercase;
 }
